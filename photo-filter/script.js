@@ -4,7 +4,7 @@ const base = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tas
 const images = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
 let i = 0;
 const next = document.querySelector('.btn-next');
-
+const load = document.querySelector('#btnInput')
 
 
 // кнопка fullscreen
@@ -32,7 +32,6 @@ function viewStartImage() {
     timesDay = './assets/img/night.jpg';
 }; 
     pictures.style.backgroundImage = `url(${timesDay})`;
- 
 }
 viewStartImage()
 
@@ -69,3 +68,17 @@ let timesDay = '';
 } 
 next.addEventListener('click', getImage);
 
+// загрузка стороннего изображения по кнопке Load picture
+
+load.addEventListener("change", function(e) {
+  const file = load.files[0];
+  console.log(file)
+  const reader = new FileReader();
+  
+  reader.readAsDataURL(file);
+  reader.addEventListener("load", () => {
+    let b = reader.result;
+    pictures.style.backgroundImage = `url(${b})`;
+    load.value = "";
+  });
+});
