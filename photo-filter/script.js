@@ -1,5 +1,5 @@
 const fullscreen = document.querySelector('.openfullscreen');
-const pictures  = document.querySelector('.container-pictures ');
+const pictures  = document.querySelector('img ');
 const base = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
 const images = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
 let i = 0;
@@ -31,7 +31,7 @@ function viewStartImage() {
 } else if (hour >= 0 && hour < 6) {
     timesDay = './assets/img/night.jpg';
 }; 
-    pictures.style.backgroundImage = `url(${timesDay})`;
+    pictures.src = timesDay ;
 }
 viewStartImage()
 
@@ -41,7 +41,7 @@ function viewBgImage(src) {
   const img = new Image();
   img.src = src;
   img.onload = () => {      
-    pictures.style.backgroundImage = `url(${src})`;
+    pictures.src = src;
   }; 
 }
 
@@ -74,11 +74,35 @@ load.addEventListener("change", function(e) {
   const file = load.files[0];
   console.log(file)
   const reader = new FileReader();
-  
   reader.readAsDataURL(file);
   reader.addEventListener("load", () => {
-    let b = reader.result;
-    pictures.style.backgroundImage = `url(${b})`;
+    pictures.src = reader.result;
     load.value = "";
   });
 });
+
+//сохранение изображения по кнопке Save picture
+const save = document.querySelector('.btn-save');
+save.addEventListener('click',createCanvas)
+
+function createCanvas(){
+  const canvas = document.createElement('canvas');
+    const img = new Image();
+    img.setAttribute('crossOrigin', 'anonymous'); 
+    img.src = pictures.src;
+    img.onload = function() {
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+      var link = document.createElement('a');
+  link.download = 'download.png';
+  link.href = canvas.toDataURL();
+  link.click();
+  link.delete;
+    };  
+  
+  
+}
+
+
+
+  

@@ -168,7 +168,9 @@ output {
 	--saturate: 100%;
 	--hue: 0deg;
 }
-/* img {
+img,
+canvas {
+	transition: 1s ease-in-out;
 	height: 100%;
 	width: 100%;
 	max-height: 520px;
@@ -176,9 +178,9 @@ output {
 	object-fit: contain;
 	filter: blur(var(--blur)) invert(var(--invert)) sepia(var(--sepia)) saturate(var(--saturate)) hue-rotate(var(--hue))
 		grayscale(var(--grayscale));
-} */
-.container-pictures {
-	transition: background-image 1s ease-in-out;
+}
+/* .container-pictures {
+	
 	height: 520px;
 	width: 100%;
 	max-height: 520px;
@@ -187,7 +189,7 @@ output {
 	background-repeat: no-repeat;
 	filter: blur(var(--blur, 0px)) invert(var(--invert, 0%)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
 		hue-rotate(var(--hue, 0deg));
-}
+} */
 .fullscreen {
 	position: fixed;
 	top: 120px;
