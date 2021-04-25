@@ -91,8 +91,8 @@ function createCanvas(){
     img.setAttribute('crossOrigin', 'anonymous'); 
     img.src = pictures.src;
     img.addEventListener("load", ()=> {
-      canvas.width = pictures.width;
-    canvas.height = pictures.height;
+      canvas.width = pictures.naturalWidth;
+      canvas.height = pictures.naturalHeight;
       const ctx = canvas.getContext("2d");
       ctx.drawImage(img, 0, 0);
       const dataURL = canvas.toDataURL("image/png");
