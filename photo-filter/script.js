@@ -90,19 +90,17 @@ function createCanvas(){
     const img = new Image();
     img.setAttribute('crossOrigin', 'anonymous'); 
     img.src = pictures.src;
-    img.onload = function() {
+    img.addEventListener("load", ()=> {
+      canvas.width = pictures.width;
+    canvas.height = pictures.height;
       const ctx = canvas.getContext("2d");
       ctx.drawImage(img, 0, 0);
-      var link = document.createElement('a');
-  link.download = 'download.png';
-  link.href = canvas.toDataURL();
-  link.click();
-  link.delete;
-    };  
-  
+      const dataURL = canvas.toDataURL("image/png");
+    let link = document.createElement("a");
+    link.download = "image.png";
+    link.href = dataURL;
+    link.click();
+    link.delete;
+    } )
   
 }
-
-
-
-  
