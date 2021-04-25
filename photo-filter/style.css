@@ -169,8 +169,6 @@ output {
 	--hue: 0deg;
 }
 .container-pictures {
-	background-image: url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg');
-
 	transition: background-image 1s ease-in-out;
 	height: 520px;
 	width: 100%;
