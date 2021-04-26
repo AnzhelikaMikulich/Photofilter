@@ -104,3 +104,21 @@ function createCanvas(){
     } )
   
 }
+
+//работа с Input-range
+const inputRange= document.querySelectorAll('label')
+inputRange.forEach((element) => {
+  const input = element.querySelector("input");
+  const output = element.querySelector("output");
+
+  input.addEventListener("input", (e) => {
+    console.log(e.target)
+    let value = e.target.value;
+    const unit = e.target.dataset.sizing;
+    output.value = value + unit;
+    console.log(output.value)
+
+    document.documentElement.style.setProperty(`--${e.target.name}`, output.value);
+  });
+});
+
