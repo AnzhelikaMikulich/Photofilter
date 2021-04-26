@@ -134,6 +134,7 @@ function createCanvas() {
 		canvas.width = pictures.naturalWidth;
 		canvas.height = pictures.naturalHeight;
 		const ctx = canvas.getContext('2d');
+    ctx.filter = 
 		ctx.drawImage(img, 0, 0);
 		const dataURL = canvas.toDataURL('image/png');
 		let link = document.createElement('a');
@@ -173,3 +174,5 @@ function resetStyles(){
     document.documentElement.style.removeProperty(`--${inputs[i].name}`)
   }
 }
+
+
