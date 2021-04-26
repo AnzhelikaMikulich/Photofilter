@@ -29,6 +29,11 @@ const load = document.querySelector('#btnInput');
 const save = document.querySelector('.btn-save');
 const reset = document.querySelector('.btn-reset');
 const button = document.querySelectorAll('.btn');
+const inputRange = document.querySelectorAll('label');
+const inputs = document.querySelectorAll('.filters input');
+const outputs = document.querySelectorAll(' output');
+
+
 
 // кнопка fullscreen
 fullscreen.addEventListener('click', changeScreen);
@@ -108,7 +113,6 @@ next.addEventListener('click', getImage);
 
 load.addEventListener('change', function (e) {
 	const file = load.files[0];
-	console.log(file);
 	const reader = new FileReader();
 	reader.readAsDataURL(file);
 	reader.addEventListener('load', () => {
@@ -140,8 +144,8 @@ function createCanvas() {
 	});
 }
 
-//работа с Input-range
-const inputRange = document.querySelectorAll('label');
+//работа с Input-range и фильтрами
+
 inputRange.forEach((element) => {
 	const input = element.querySelector('input');
 	const output = element.querySelector('output');
@@ -156,3 +160,16 @@ inputRange.forEach((element) => {
 		document.documentElement.style.setProperty(`--${e.target.name}`, output.value);
 	});
 });
+
+//сброс стилей Reset button
+
+reset.addEventListener('click',resetStyles );
+
+function resetStyles(){
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].value = inputs[i].getAttribute('value')
+    console.log(inputs[i].name)
+    outputs[i].value = outputs[i].getAttribute('value')
+    document.documentElement.style.removeProperty(`--${inputs[i].name}`)
+  }
+}
