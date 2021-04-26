@@ -259,6 +259,25 @@ img {
 	right: -5px;
 	letter-spacing: 0;
 }
+.youtube {
+	display: block;
+	width: 120px;
+	height: 45px;
+	padding-left: 45px;
+	background-image: url('assets/img/youtube.svg');
+	background-size: 35px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	line-height: 45px;
+	color: #cbd5de;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	transition: 0.3s;
+	text-decoration: none;
+}
+.youtube:hover {
+	transform: scale(1.1);
+}
 @media (max-width: 1024px) {
 	.main {
 		padding-top: 40px;
