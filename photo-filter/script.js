@@ -5,6 +5,7 @@ const images = [
 	'01.jpg',
 	'02.jpg',
 	'03.jpg',
+  '04.jpg',
 	'05.jpg',
 	'06.jpg',
 	'07.jpg',
@@ -134,7 +135,8 @@ function createCanvas() {
 		canvas.width = pictures.naturalWidth;
 		canvas.height = pictures.naturalHeight;
 		const ctx = canvas.getContext('2d');
-    ctx.filter = 
+    const coefficient = pictures.naturalHeight / pictures.height;
+    ctx.filter = `blur(${inputs[0].value * coefficient}px) invert(${inputs[1].value}%) sepia(${inputs[2].value}%) saturate(${inputs[3].value}%) hue-rotate(${inputs[4].value}deg)`;
 		ctx.drawImage(img, 0, 0);
 		const dataURL = canvas.toDataURL('image/png');
 		let link = document.createElement('a');
