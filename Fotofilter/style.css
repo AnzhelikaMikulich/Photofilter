@@ -167,6 +167,8 @@ output {
   --sepia: 0%;
   --saturate: 100%;
   --hue: 0deg;
+  --contrast: 100%;
+  --grayscale: 0%;
 }
 canvas,
 img {
@@ -178,7 +180,8 @@ img {
   object-fit: contain;
 
   filter: blur(var(--blur)) invert(var(--invert)) sepia(var(--sepia))
-    saturate(var(--saturate)) hue-rotate(var(--hue));
+    saturate(var(--saturate)) hue-rotate(var(--hue)) contrast(var(--contrast))
+    grayscale(var(--grayscale));
 }
 
 .fullscreen {
