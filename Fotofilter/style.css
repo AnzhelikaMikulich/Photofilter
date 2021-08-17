@@ -183,7 +183,23 @@ img {
     saturate(var(--saturate)) hue-rotate(var(--hue)) contrast(var(--contrast))
     grayscale(var(--grayscale));
 }
-
+.container-presets {
+  display: flex;
+  width: 150px;
+  gap: 10px;
+}
+.amaro {
+  filter: contrast(1) saturate(0.1);
+}
+.paris {
+  filter: sepia(1.2);
+}
+.oslo {
+  filter: saturate(0.1) invert(0.2);
+}
+.new-york {
+  filter: grayscale(0.5);
+}
 .fullscreen {
   position: fixed;
   top: 120px;

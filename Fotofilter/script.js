@@ -1,5 +1,5 @@
 const fullscreen = document.querySelector('.openfullscreen');
-const pictures = document.querySelector('img ');
+const pictures = document.querySelectorAll('img ');
 const base = './assets/img/unstored/';
 const images = [
 	'city1.jpg',
@@ -68,7 +68,7 @@ function viewStartImage() {
 	} else if (hour >= 0 && hour < 6) {
 		timesDay = './assets/img/night.jpg';
 	}
-	pictures.src = timesDay;
+	pictures.forEach(el =>el.src = timesDay)
 }
 viewStartImage();
 
@@ -77,7 +77,8 @@ function viewBgImage(src) {
 	const img = new Image();
 	img.src = src;
 	img.onload = () => {
-		pictures.src = src;
+		pictures.forEach(el =>el.src = src)
+		
 	};
 }
 
