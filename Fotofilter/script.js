@@ -1,5 +1,6 @@
 const fullscreen = document.querySelector(".openfullscreen");
 const pictures = document.querySelectorAll("img ");
+const picture = document.querySelector("#pictures");
 const base = "./assets/img/unstored/";
 const images = [
   "city1.jpg",
@@ -31,8 +32,17 @@ const button = document.querySelectorAll(".btn");
 const inputRange = document.querySelectorAll("label");
 const inputs = document.querySelectorAll(".filters input");
 const outputs = document.querySelectorAll(" output");
-let presets = document.querySelector(".container-presets");
-let containerImg = document.querySelector(".container-pictures img");
+const presets = document.querySelector(".container-presets");
+const containerImg = document.querySelector(".container-pictures img");
+
+// самооценка
+
+function selfMade() {
+  console.log(
+    "Всего 30 баллов \n 10 баллов - Разобраться в коде чужого проекта, понять его, воспроизвести исходное приложение \n 10 баллов-Добавьте  в приложение минимум два дополнительных фильтра и пресеты\n 10 баллов - Дополнительный функционал(перелистывание фотозагрузка в приложение фото с компьютера, сохранение фото на компьютер вместе с наложенными фильтрами, сброс фильтров кликом на кнопку"
+  );
+}
+selfMade();
 
 // fullscreen
 fullscreen.addEventListener("click", changeScreen);
@@ -101,7 +111,7 @@ load.addEventListener("change", function (e) {
   const reader = new FileReader();
   reader.readAsDataURL(file);
   reader.addEventListener("load", () => {
-    pictures.src = reader.result;
+    picture.src = reader.result;
     load.value = "";
   });
 });
@@ -114,12 +124,12 @@ function createCanvas() {
   const canvas = document.createElement("canvas");
   const img = new Image();
   img.setAttribute("crossOrigin", "anonymous");
-  img.src = pictures.src;
+  img.src = picture.src;
   img.addEventListener("load", () => {
-    canvas.width = pictures.naturalWidth;
-    canvas.height = pictures.naturalHeight;
+    canvas.width = picture.naturalWidth;
+    canvas.height = picture.naturalHeight;
     const ctx = canvas.getContext("2d");
-    const coefficient = pictures.naturalHeight / pictures.height;
+    const coefficient = picture.naturalHeight / picture.height;
     ctx.filter = `blur(${inputs[0].value * coefficient}px) invert(${
       inputs[1].value
     }%) sepia(${inputs[2].value}%) saturate(${inputs[3].value}%) hue-rotate(${
@@ -170,8 +180,6 @@ function resetStyles() {
 }
 
 // применение пресетов
-// let presets = document.querySelector('.container-presets')
-// let containerImg = document.querySelector('.container-pictures img')
 presets.addEventListener("click", presetsAdd);
 
 function presetsAdd(e) {
@@ -182,5 +190,5 @@ function presetsAdd(e) {
     containerImg.classList.contains("new-york")
   )
     containerImg.classList.remove("amaro", "paris", "oslo", "new-york");
-    containerImg.classList.add(e.target.classList.value);
+  containerImg.classList.add(e.target.classList.value);
 }

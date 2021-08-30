@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -9,17 +10,17 @@ a:focus {
 }
 body {
   min-height: 100vh;
-  background-color: #313940;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  background-color: #73fc91;
+  font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 .header {
   text-align: center;
   width: 100%;
-  background: #313940;
+  background: #73fc91;
   border-bottom: 1px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+  border-image-source: linear-gradient(to left, #73fc91, #5de0f8, #c0fe5c);
 }
 .header-title {
   line-height: 60px;
@@ -41,23 +42,23 @@ label:not(.btn) {
   position: relative;
   margin-bottom: 40px;
   margin-right: 140px;
-  color: #a2abb3;
+  color: #fff;
   font-size: 16px;
 }
 label:hover {
-  color: #cbd5de;
+  color: #2395aa;
 }
 label:hover output {
-  color: #a2abb3;
+  color: #2395aa;
 }
 label:active output {
-  color: #cbd5de;
+  color: #2395aa;
 }
 input[type="range"] {
   display: block;
   appearance: none;
   height: 3px;
-  background-color: #a2abb3;
+  background-color: #5de0f8;
   margin-top: 22px;
   outline: none;
   border-radius: 0.25rem;
@@ -69,8 +70,8 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 25px;
   height: 25px;
-  background-color: #313940;
-  border: 3px solid #a2abb3;
+  background-color: #c0fe5c;
+  border: 3px solid #5de0f8;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s;
@@ -84,13 +85,14 @@ output {
   height: 40px;
   right: -80px;
   top: 24px;
-  background-color: #454c53;
-  border: 1px solid #454c53;
+  background: linear-gradient(to left, #73fc91, #5de0f8, #c0fe5c);
   text-align: left;
   padding-left: 10px;
   line-height: 40px;
   border-radius: 2px;
   transition: 0.3s;
+  color: #fff;
+  font-size: 16px;
 }
 .btn-container {
   margin-bottom: 20px;
@@ -109,10 +111,10 @@ output {
   min-width: 120px;
   height: 40px;
   padding: 0 10px;
-  background-color: #454c53;
+  background-color: #c0fe5c;
   border: 0;
-  border-radius: 2px;
-  font-family: "Open Sans", sans-serif;
+  border-radius: 50px;
+  font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 300;
   color: #fff;
@@ -124,13 +126,13 @@ output {
   background-color: #515961;
 }
 .btn:active {
-  background-color: #00c9b7;
+  background-color: #5de0f8;
 }
 .btn-active {
-  background-color: #00b4a4;
+  background-color: #5de0f8;
 }
 .btn-active:hover {
-  background-color: #00c9b7;
+  background-color: #5de0f8;
 }
 .btn-load {
   position: relative;
@@ -186,7 +188,7 @@ img {
 .container-presets {
   display: flex;
   width: 150px;
-  gap: 10px;
+  gap: 24px;
 }
 .amaro {
   filter: contrast(1) saturate(0.1);
@@ -223,8 +225,8 @@ img {
 .footer {
   border-top: 1px solid;
   border-image-slice: 1;
-  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
-  background-color: #313940;
+  border-image-source: linear-gradient(to left, #73fc91, #5de0f8, #c0fe5c);
+  background-color: #73fc91;
 }
 .footer-container {
   padding: 0 15px;
@@ -245,10 +247,12 @@ img {
   background-repeat: no-repeat;
   background-position: left center;
   line-height: 45px;
-  color: #cbd5de;
+  color: #c0fe5c;
   font-size: 16px;
-  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
   transition: 0.3s;
+  text-decoration: none;
 }
 .github:hover {
   color: #fff;
@@ -256,7 +260,7 @@ img {
 .rss {
   display: block;
   position: relative;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
   width: 86px;
   height: 32px;
   background-image: url("assets/svg/rss.svg");
@@ -271,7 +275,7 @@ img {
   right: 0;
   font-size: 21px;
   letter-spacing: -2px;
-  color: #cbd5de;
+  color: #c0fe5c;
   line-height: 0.9;
   font-weight: bold;
   transition: 0.3s;
@@ -292,7 +296,7 @@ img {
   line-height: 45px;
   color: #cbd5de;
   font-size: 16px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nanum Gothic", Arial, Helvetica, sans-serif;
   transition: 0.3s;
   text-decoration: none;
 }
